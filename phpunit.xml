@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         cacheDirectory=".phpunit.cache"
+         colors="true"
+         failOnRisky="true"
+         failOnWarning="true"
+         beStrictAboutOutputDuringTests="true"
+         displayDetailsOnTestsThatTriggerWarnings="true">
+    <testsuites>
+        <testsuite name="deletion">
+            <directory>tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+
+    <!--
+        Группа defects — тесты, утверждающие ПРАВИЛЬНОЕ поведение. Они падают намеренно:
+        каждый из них является исполняемым доказательством конкретной находки из REVIEW.md.
+        Из основного прогона исключены, запускаются через `composer test:defects`.
+    -->
+    <groups>
+        <exclude>
+            <group>defects</group>
+        </exclude>
+    </groups>
+
+    <source>
+        <include>
+            <directory>Deletion</directory>
+        </include>
+    </source>
+</phpunit>
