@@ -1,4 +1,23 @@
-# Тестовое задание: code review модуля Deletion
+# Doctrine deletion module — code review and executable defect analysis
+
+A PHP/Symfony/Doctrine review exercise focused on cascade deletion, dependency
+ordering and the gap between documented rules and actual behavior.
+
+The contribution is the **review and PHPUnit test suite**. The supplied module in
+`Deletion/` is unchanged; it is not presented as an original production system.
+[REVIEW.md](REVIEW.md) explains the findings and architectural alternatives.
+[The test guide](tests/README.md) distinguishes characterization tests from
+deliberately failing defect reproductions.
+
+```bash
+composer install
+composer test          # characterization suite
+composer test:defects  # intentionally failing demonstrations of reviewed defects
+```
+
+The detailed review and original assignment notes below are in Russian.
+
+## Original assignment notes
 
 ## Часть 1 — ревью
 
